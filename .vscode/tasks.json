@@ -1,0 +1,19 @@
+{
+    // See https://go.microsoft.com/fwlink/?LinkId=733558
+    // for the documentation about the tasks.json format
+    "version": "2.0.0",
+    "tasks": [
+        {
+            "label": "Compile WEBGL_EGL_base",
+            "type": "shell",
+            "command": "cd C:/WebAssembly/WEBGL_EGL_base/project & cmake_build.bat",
+            "group":  {
+                "kind": "build",
+                "isDefault": true
+            },
+            "presentation": {
+                "reveal":"always"
+            }
+        }
+    ]
+}
