@@ -13,6 +13,7 @@ EGL_DEPTH_SIZE,24,
 EGL_STENCIL_SIZE,8,
 EGL_NONE
 };
+extern "C" {
 void draw(){
 EmscriptenWebGLContextAttributes attr;
 emscripten_webgl_init_context_attributes(&attr);
@@ -37,7 +38,7 @@ EGLSurface surface=eglCreateWindowSurface(display,eglconfig,NULL,NULL);
 eglMakeCurrent(display,surface,surface,contextegl);
 glClearColor(0.7,0.0,0.8,0.8);
 glClear(GL_COLOR_BUFFER_BIT);
-}}}
+}}}}
 
 int main(){
   return 1;
