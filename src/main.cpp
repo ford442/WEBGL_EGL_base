@@ -39,7 +39,24 @@ eglMakeCurrent(display,surface,surface,contextegl);
 glClearColor(0.7,0.0,0.8,0.8);
 glClear(GL_COLOR_BUFFER_BIT);
 }}}}
-
 int main(){
-  return 1;
+EM_ASM(
+document.getElementById('btn2').addEventListener('click', function(){
+Module.ccall('draw');
+});
+document.getElementById('btn').addEventListener('click', function(){
+let bz=new BroadcastChannel('bez');
+let hi,wi;
+hi=window.innerHeight;
+wi=window.innerWidth;
+hi=Math.round(hi);
+wi=window.innerWidth;
+wi=Math.round(wi);
+document.getElementById("ihig").innerHTML=hi;
+document.getElementById("circle").height=hi;
+document.getElementById("circle").width=wi;
+bz.postMessage({data: 222});
+});
+);
+return 1;
 }
