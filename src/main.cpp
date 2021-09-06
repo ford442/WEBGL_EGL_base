@@ -13,7 +13,7 @@ EGL_DEPTH_SIZE,24,
 EGL_STENCIL_SIZE,8,
 EGL_NONE
 };
-int main(){
+void draw(){
 EmscriptenWebGLContextAttributes attr;
 emscripten_webgl_init_context_attributes(&attr);
 EMSCRIPTEN_WEBGL_CONTEXT_HANDLE ctx=emscripten_webgl_create_context("#canvas",&attr);
@@ -37,6 +37,8 @@ EGLSurface surface=eglCreateWindowSurface(display,eglconfig,NULL,NULL);
 eglMakeCurrent(display,surface,surface,contextegl);
 glClearColor(0.7,0.0,0.8,0.8);
 glClear(GL_COLOR_BUFFER_BIT);
-}}
-return 1;
+}}}
+
+int main(){
+  return 1;
 }
