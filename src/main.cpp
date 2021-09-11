@@ -4,7 +4,7 @@
 #include <GLES2/gl2.h>
 #include <emscripten.h>
 #include <EGL/egl.h>
-#include "GL/gl.h"
+#include <GL/glew.h>
 
 
 static EGLint attribute_list[] ={
