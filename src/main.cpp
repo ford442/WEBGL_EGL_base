@@ -1,3 +1,4 @@
+#include <stdmath.h>
 #include "func.h"
 #include <emscripten/html5.h>
 #include <GLES2/gl2.h>
