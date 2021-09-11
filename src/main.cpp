@@ -1,7 +1,7 @@
 #include <math.h>
 #include "func.h"
 #include <emscripten/html5.h>
-#include <GLES2/gl3.h>
+#include <GLES3/gl3.h>
 #include <emscripten.h>
 #include <EGL/egl.h>
 
