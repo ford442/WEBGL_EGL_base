@@ -38,6 +38,15 @@ EGLSurface surface=eglCreateWindowSurface(display,eglconfig,NULL,NULL);
 eglMakeCurrent(display,surface,surface,contextegl);
 glClearColor(0.7,0.0,0.8,0.8);
 glClear(GL_COLOR_BUFFER_BIT);
+const int sides = 20;
+const double radius = 5; 
+glBegin(GL_LINE_LOOP);
+for (int a = 0; a < 360; a += 360 / sides){
+double heading = a * 3.1415926535897932384626433832795 / 180;
+glVertex2d(cos(heading) * radius, sin(heading) * radius);
+}
+glEnd();
+glFlush();
 }}}}
 int main(){
 EM_ASM(
