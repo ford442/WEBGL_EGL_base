@@ -20,19 +20,18 @@ EGL_NONE
 };
 
 extern "C" {
-  
-  void jsss(){
-    
-MAIN_THREAD_EM_ASM({
-let canvas=document.getElementById('canvas');
+void jsss(){
+EM_ASM({
 specialHTMLTargets["!canvas"] = Module.canvas;
+var canvas=document.getElementById('canvas');
 });
-  }
-
+}
 }
 
 int main(){
+  
   jsss();
+  
 EmscriptenWebGLContextAttributes attr;
 attr.alpha=1;
 attr.depth=0;
