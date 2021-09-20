@@ -1,6 +1,6 @@
 #include "func.h"
 #include <emscripten/html5.h>
-#include <GLES2/gl2.h>
+#include <GLES3/gl3.h>
 #include <emscripten.h>
 #include <EGL/egl.h>
 static EGLint attribute_list[]={
@@ -11,7 +11,10 @@ EGL_ALPHA_SIZE,8,
 EGL_DEPTH_SIZE,24,
 EGL_STENCIL_SIZE,8,
 EGL_BUFFER_SIZE,32,
-EGL_TRANSPARENT_TYPE,EGL_TRANSPARENT_RGB
+EGL_CONFORMANT,EGL_OPENGL_ES2_BIT,
+EGL_BIND_TO_TEXTURE_RGBA,EGL_TRUE,
+EGL_TRANSPARENT_TYPE,EGL_TRANSPARENT_RGB,
+EGL_NONE
 };
 int main(int argc,char**argv){
 EmscriptenWebGLContextAttributes attr;
@@ -27,7 +30,7 @@ if(eglChooseConfig(display,attribute_list,&eglconfig,1,&config_size)==EGL_TRUE &
 if(eglBindAPI(EGL_OPENGL_ES_API)!=EGL_TRUE){
 printjs("EglBindAPI failed");
 }
-EGLint anEglCtxAttribs2[]={EGL_CONTEXT_CLIENT_VERSION,2,EGL_NONE,EGL_NONE};
+EGLint anEglCtxAttribs2[]={EGL_CONTEXT_CLIENT_VERSION,3,EGL_NONE,EGL_NONE};
 contextegl=eglCreateContext (display,eglconfig,EGL_NO_CONTEXT,anEglCtxAttribs2);
 if(contextegl==EGL_NO_CONTEXT){
 printjs("eglCreateContext failed.");
