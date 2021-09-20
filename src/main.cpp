@@ -7,7 +7,7 @@
 
 extern "C" {
 void jss() {
-EM_ASM({
+ASYNC_EM_ASM({
 var MyModule;
 const OccViewerModuleInitialized = createModule(MyModule);
 });}}
