@@ -22,14 +22,10 @@ EGL_NONE
 extern "C" {
 void jsss(){
 EM_ASM({
-var Module={
-canvas:(function(){
-let canvas=document.getElementById('canvas');
-return canvas;
-})()};
+  
+  
 });
 }}
-
 int main(){
   
   jsss();
