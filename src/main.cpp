@@ -12,7 +12,7 @@ EGL_DEPTH_SIZE,24,
 EGL_STENCIL_SIZE,8,
 EGL_BUFFER_SIZE,32,
 EGL_TRANSPARENT_TYPE,EGL_TRANSPARENT_RGB,
-EGL_NONE
+EGL_ONE
 };
 int main(int argc,char**argv){
 EmscriptenWebGLContextAttributes attr;
