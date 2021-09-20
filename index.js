@@ -6,8 +6,4 @@
 let canvas=document.getElementById('canvas');
 
 
-var Module={
-canvas:(function(){
-canvas=document.getElementById('canvas');
-return canvas;
-})()};
+// var Module={canvas:(function(){canvas=document.getElementById('canvas');return canvas;})()};
