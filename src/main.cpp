@@ -23,6 +23,7 @@ int main(int argc,char **argv){
 
 EmscriptenWebGLContextAttributes attr;
 attr.alpha=1;
+attr.stencil=0;
 attr.depth=0;
 attr.antialias=0;
 emscripten_webgl_init_context_attributes(&attr);
