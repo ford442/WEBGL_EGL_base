@@ -18,6 +18,13 @@ EGL_NONE
 };
 int main(int argc,char**argv){
 EmscriptenWebGLContextAttributes attr;
+attrs.alpha = 1;
+attrs.depth = 0;
+attrs.antialias = 0;
+attrs.lowLatency = 1;
+  
+attr.powerPreference = EM_WEBGL_POWER_PREFERENCE_HIGH_PERFORMANCE;
+  
 emscripten_webgl_init_context_attributes(&attr);
 EMSCRIPTEN_WEBGL_CONTEXT_HANDLE ctx=emscripten_webgl_create_context("#canvas",&attr);
 emscripten_webgl_make_context_current(ctx);
