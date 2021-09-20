@@ -1,5 +1,5 @@
-var MyModule={
-canvas:(function(){
+var MyModule = {
+canvas: (function() {
 var aCanvas=document.getElementById('canvas');
 return aCanvas;
 })(),
