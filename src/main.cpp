@@ -19,6 +19,9 @@ EGL_TRANSPARENT_TYPE,EGL_TRANSPARENT_RGB, */
 EGL_NONE
 };
 int main(){
+MAIN_THREAD_EM_ASM({
+specialHTMLTargets["!canvas"]=Module.canvas;
+});
 EmscriptenWebGLContextAttributes attr;
 attr.alpha=1;
 attr.depth=0;
