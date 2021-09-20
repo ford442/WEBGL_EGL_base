@@ -22,8 +22,13 @@ EGL_NONE
 extern "C" {
 void jsss(){
 EM_ASM({
-specialHTMLTargets["!canvas"] = Module.canvas;
-var canvas=document.getElementById('canvas');
+Module.canvas=(function() {
+var aCanvas = document.getElementById('canvas');
+var aGlCtx;
+return aCanvas;
+});
+            
+// var canvas=document.getElementById('canvas');
 });
 }
 }
