@@ -11,7 +11,7 @@ set(CMAKE_EXE_LINKER_FLAGS "${CMAKE_EXE_LINKER_FLAGS} -sEXPORTED_RUNTIME_METHODS
 set(CMAKE_EXE_LINKER_FLAGS "${CMAKE_EXE_LINKER_FLAGS} --extern-post-js ../index.js")
 set(CMAKE_INSTALL_PREFIX "" CACHE PATH "")
 
-set(SRCS 
+set(SRCS asasfasafs
     src/main.cpp)
 
 set(HEADERS)
