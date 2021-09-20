@@ -19,10 +19,10 @@ EGL_NONE
 };
 
 int main(){
-  EM_ASM({
-var MyModule={
+EM_ASM({
+let MyModule={
 canvas: (function(){
-var aCanvas=document.getElementById('canvas');
+let aCanvas=document.getElementById('canvas');
 return aCanvas;
 })()};
 const OccViewerModuleInitialized=createModule(MyModule);
