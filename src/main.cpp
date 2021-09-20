@@ -1,10 +1,6 @@
 #include <math.h>
 #include "func.h"
 #include <emscripten/html5.h>
-#include <GL/gl.h>
-#include <GL/glu.h>
-#include <GL/glut.h>
-#include <GL/glfw.h>
 #include <GLES3/gl3.h>
 #include <emscripten.h>
 #include <EGL/egl.h>
@@ -41,14 +37,6 @@ printjs("eglCreateContext failed ");
 printjs("eglCreateContext success ! ");
 EGLSurface surface=eglCreateWindowSurface(display,eglconfig,NULL,NULL);
 eglMakeCurrent(display,surface,surface,contextegl);
-const int sides = 20;
-const double radius = 5; 
-glBegin(GL_LINE_LOOP);
-for (int a = 0; a < 360; a += 360 / sides){
-double heading = a * 3.1415926535897932384626433832795 / 180;
-glVertex2d(cos(heading) * radius, sin(heading) * radius);
-}
-glEnd();
 glFlush();
 glClearColor(0.7,0.0,0.8,0.8);
 glClear(GL_COLOR_BUFFER_BIT);
