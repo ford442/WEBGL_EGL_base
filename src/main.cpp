@@ -2,6 +2,7 @@
 #include <GLES3/gl3.h>
 #include <emscripten.h>
 #include <EGL/egl.h>
+#include <string>
 
 static EGLint attribute_list[]={
 EGL_RED_SIZE,8,
