@@ -21,9 +21,9 @@ EGL_NONE
 extern "C"{
 void jss(){
 EM_ASM({
-let MyModule={
+var MyModule={
 canvas: (function(){
-let aCanvas=document.getElementById('canvas');
+var aCanvas=document.getElementById('canvas');
 return aCanvas;
 })()};
 const OccViewerModuleInitialized=createModule(MyModule);
