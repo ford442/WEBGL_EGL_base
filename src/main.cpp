@@ -35,7 +35,7 @@ if(eglBindAPI(EGL_OPENGL_ES_API)!=EGL_TRUE){
 // printjs("EglBindAPI failed");
 }
 EGLint anEglCtxAttribs2[]={EGL_CONTEXT_CLIENT_VERSION,3,EGL_NONE,EGL_NONE};
-contextegl=eglCreateContext (display,eglconfig,EGL_NO_CONTEXT,anEglCtxAttribs2);
+contextegl=eglCreateContext(display,eglconfig,EGL_NO_CONTEXT,anEglCtxAttribs2);
 if(contextegl==EGL_NO_CONTEXT){
 // printjs("eglCreateContext failed.");
 }else{
