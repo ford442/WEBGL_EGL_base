@@ -3,6 +3,7 @@
 #include <GLES3/gl3.h>
 #include <emscripten.h>
 #include <EGL/egl.h>
+#include "func.h"
 
 
 static EGLint attribute_list[]={
