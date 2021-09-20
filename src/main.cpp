@@ -55,6 +55,6 @@ eglMakeCurrent(display,surface,surface,contextegl);
 glClearColor(1.0,0.0,0.0,0.5);
 glClear(GL_COLOR_BUFFER_BIT);
 }}
-jss();
+// jss();
 return 1;
 }
