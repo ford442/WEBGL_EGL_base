@@ -19,7 +19,7 @@ EGL_TRANSPARENT_TYPE,EGL_TRANSPARENT_RGB,
 EGL_NONE
 };
 
-int main(int argc,char**argv){
+int main(int argc,char **argv){
 
 EmscriptenWebGLContextAttributes attr;
 emscripten_webgl_init_context_attributes(&attr);
