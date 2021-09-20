@@ -2,5 +2,5 @@
 // var MyModule;
 // const OccViewerModuleInitialized = createModule(MyModule);
 
-var Module.canvas=document.getElementById('canvas');
+// var Module.canvas=document.getElementById('canvas');
 
