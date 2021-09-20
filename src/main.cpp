@@ -47,5 +47,13 @@ eglMakeCurrent(display,surface,surface,contextegl);
 glClearColor(1.0,0.0,0.0,0.5);
 glClear(GL_COLOR_BUFFER_BIT);
 }}
+EM_ASM({
+var MyModule={
+canvas: (function(){
+var aCanvas=document.getElementById('canvas');
+return aCanvas;
+})(),};
+const OccViewerModuleInitialized=createModule(MyModule);
+});
 return 1;
 }
