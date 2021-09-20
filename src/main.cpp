@@ -21,6 +21,7 @@ EGL_NONE
 int main(){
 MAIN_THREAD_EM_ASM({
 let canvas=document.getElementById('canvas');
+specialHTMLTargets["!canvas"] = Module.canvas;
 });
 EmscriptenWebGLContextAttributes attr;
 attr.alpha=1;
