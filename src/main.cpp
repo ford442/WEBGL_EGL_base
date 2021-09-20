@@ -20,7 +20,7 @@ EGL_NONE
 };
 int main(){
 MAIN_THREAD_EM_ASM({
-specialHTMLTargets["!canvas"]=Module.canvas;
+Module.canvas=getElementById('canvas');
 });
 EmscriptenWebGLContextAttributes attr;
 attr.alpha=1;
