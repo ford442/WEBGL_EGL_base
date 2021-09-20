@@ -3,10 +3,11 @@
 // const OccViewerModuleInitialized = createModule(MyModule);
 
 // var Module.canvas=document.getElementById('canvas');
+let canvas=document.getElementById('canvas');
 
 
 var Module={
 canvas:(function(){
-let canvas=document.getElementById('canvas');
+canvas=document.getElementById('canvas');
 return canvas;
 })()};
