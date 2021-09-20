@@ -14,8 +14,7 @@ set(CMAKE_INSTALL_PREFIX "" CACHE PATH "")
 set(SRCS 
     src/main.cpp)
 
-set(HEADERS
-    src/func.h)
+set(HEADERS)
 
 add_executable(WEBGL_EGL_base ${SRCS} ${HEADERS} ${RESSOURCES})
 
