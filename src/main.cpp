@@ -18,8 +18,18 @@ EGL_TRANSPARENT_TYPE,EGL_TRANSPARENT_RGB,
 EGL_NONE
 };
 
+extern "C"{
+void jss(){
+EM_ASM({
+let MyModule={
+canvas: (function(){
+let aCanvas=document.getElementById('canvas');
+return aCanvas;
+})()};
+const OccViewerModuleInitialized=createModule(MyModule);
+});}}
 int main(){
-
+jss();
 EmscriptenWebGLContextAttributes attr;
 emscripten_webgl_init_context_attributes(&attr);
 EMSCRIPTEN_WEBGL_CONTEXT_HANDLE ctx=emscripten_webgl_create_context("#canvas",&attr);
