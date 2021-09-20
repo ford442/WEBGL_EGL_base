@@ -4,6 +4,13 @@
 #include <GLES3/gl3.h>
 #include <emscripten.h>
 #include <EGL/egl.h>
+
+extern "C" {
+void jss() {
+EM_ASM({
+var MyModule;
+const OccViewerModuleInitialized = createModule(MyModule);
+});}}
 static EGLint attribute_list[]={
 EGL_RED_SIZE,8,
 EGL_GREEN_SIZE,8,
@@ -18,6 +25,7 @@ EGL_TRANSPARENT_TYPE,EGL_TRANSPARENT_RGB, */
 EGL_NONE
 };
 int main(){
+jss();
 EmscriptenWebGLContextAttributes attr;
 attr.alpha=1;
 attr.depth=0;
