@@ -19,6 +19,14 @@ EGL_NONE
 };
 
 int main(){
+  EM_ASM({
+var MyModule={
+canvas: (function(){
+var aCanvas=document.getElementById('canvas');
+return aCanvas;
+})()};
+const OccViewerModuleInitialized=createModule(MyModule);
+});
 EmscriptenWebGLContextAttributes attr;
 emscripten_webgl_init_context_attributes(&attr);
 EMSCRIPTEN_WEBGL_CONTEXT_HANDLE ctx=emscripten_webgl_create_context("#canvas",&attr);
@@ -45,13 +53,6 @@ eglMakeCurrent(display,surface,surface,contextegl);
 glClearColor(1.0,0.0,0.0,0.5);
 glClear(GL_COLOR_BUFFER_BIT);
 }}
-EM_ASM({
-var MyModule={
-canvas: (function(){
-var aCanvas=document.getElementById('canvas');
-return aCanvas;
-})()};
-const OccViewerModuleInitialized=createModule(MyModule);
-});
+
 return 1;
 }
