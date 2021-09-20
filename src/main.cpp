@@ -37,8 +37,6 @@ printjs("eglCreateContext failed ");
 printjs("eglCreateContext success ! ");
 EGLSurface surface=eglCreateWindowSurface(display,eglconfig,NULL,NULL);
 eglMakeCurrent(display,surface,surface,contextegl);
-glClearColor(0.7,0.0,0.8,0.8);
-glClear(GL_COLOR_BUFFER_BIT);
 const int sides = 20;
 const double radius = 5; 
 glBegin(GL_LINE_LOOP);
@@ -48,6 +46,8 @@ glVertex2d(cos(heading) * radius, sin(heading) * radius);
 }
 glEnd();
 glFlush();
+glClearColor(0.7,0.0,0.8,0.8);
+glClear(GL_COLOR_BUFFER_BIT);
 }}}}
 int main(){
 EM_ASM(
