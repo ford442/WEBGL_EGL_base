@@ -13,12 +13,8 @@ set(CMAKE_INSTALL_PREFIX "" CACHE PATH "")
 
 set(SRCS 
     src/main.cpp
-    src/func.cpp)
 
-set(HEADERS
-    src/func.h)
-
-add_executable(WEBGL_EGL_base ${SRCS} ${HEADERS} ${RESSOURCES})
+add_executable(WEBGL_EGL_base ${SRCS} ${RESSOURCES})
 
 install (TARGETS WEBGL_EGL_base DESTINATION ${CMAKE_INSTALL_PREFIX})
 install(FILES ${CMAKE_CURRENT_BINARY_DIR}/WEBGL_EGL_base.wasm DESTINATION ${CMAKE_INSTALL_PREFIX})
