@@ -1,4 +1,4 @@
-#include "func.h"
+// #include "func.h"
 #include <emscripten/html5.h>
 #include <GLES3/gl3.h>
 #include <emscripten.h>
@@ -31,14 +31,14 @@ EGLDisplay display=eglGetDisplay(EGL_DEFAULT_DISPLAY);
 eglInitialize(display,&major,&minor);
 if(eglChooseConfig(display,attribute_list,&eglconfig,1,&config_size)==EGL_TRUE && eglconfig!=NULL){
 if(eglBindAPI(EGL_OPENGL_ES_API)!=EGL_TRUE){
-printjs("EglBindAPI failed");
+// printjs("EglBindAPI failed");
 }
 EGLint anEglCtxAttribs2[]={EGL_CONTEXT_CLIENT_VERSION,3,EGL_NONE,EGL_NONE};
 contextegl=eglCreateContext (display,eglconfig,EGL_NO_CONTEXT,anEglCtxAttribs2);
 if(contextegl==EGL_NO_CONTEXT){
-printjs("eglCreateContext failed.");
+// printjs("eglCreateContext failed.");
 }else{
-printjs("eglCreateContext success!");
+// printjs("eglCreateContext success!");
 EGLSurface surface=eglCreateWindowSurface(display,eglconfig,NULL,NULL);
 eglMakeCurrent(display,surface,surface,contextegl);
 glClearColor(1.0,0.0,0.0,0.5);
