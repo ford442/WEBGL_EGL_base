@@ -17,7 +17,7 @@ EmscriptenWebGLContextAttributes attr;
 emscripten_webgl_init_context_attributes(&attr);
 EMSCRIPTEN_WEBGL_CONTEXT_HANDLE ctx=emscripten_webgl_create_context("#canvas",&attr);
 emscripten_webgl_make_context_current(ctx);
-glClearColor(1.0,1.0,0.0,0.5);
+glClearColor(1.0,0.0,0.0,0.5);
 glClear(GL_COLOR_BUFFER_BIT);
 EGLConfig eglconfig=NULL;
 EGLint config_size,major,minor;
@@ -34,7 +34,7 @@ printjs("eglCreateContext failed.");
 printjs("eglCreateContext success!");
 EGLSurface surface=eglCreateWindowSurface(display,eglconfig,NULL,NULL);
 eglMakeCurrent(display,surface,surface,contextegl);
-glClearColor(1.0,0.0,0.0,1.0);
+glClearColor(1.0,0.0,0.0,0.5);
 glClear(GL_COLOR_BUFFER_BIT);
 }}
 return 1;
