@@ -3,29 +3,21 @@
 #include <GLES3/gl3.h>
 #include <emscripten.h>
 #include <EGL/egl.h>
-
-
 static EGLint attribute_list[]={
 EGL_RED_SIZE,8,
 EGL_GREEN_SIZE,8,
 EGL_BLUE_SIZE,8,
 EGL_ALPHA_SIZE,8,
-EGL_DEPTH_SIZE,0,
-EGL_STENCIL_SIZE,0,
+EGL_DEPTH_SIZE,24,
+EGL_STENCIL_SIZE,8,
 EGL_BUFFER_SIZE,32,
 EGL_CONFORMANT,EGL_OPENGL_ES2_BIT,
 EGL_BIND_TO_TEXTURE_RGBA,EGL_TRUE,
 EGL_TRANSPARENT_TYPE,EGL_TRANSPARENT_RGB,
 EGL_NONE
 };
-
-int main(int argc,char **argv){
-
+int main(int argc,char**argv){
 EmscriptenWebGLContextAttributes attr;
-attr.alpha=1;
-attr.stencil=0;
-attr.depth=0;
-attr.antialias=0;
 emscripten_webgl_init_context_attributes(&attr);
 EMSCRIPTEN_WEBGL_CONTEXT_HANDLE ctx=emscripten_webgl_create_context("#canvas",&attr);
 emscripten_webgl_make_context_current(ctx);
@@ -39,9 +31,7 @@ if(eglBindAPI(EGL_OPENGL_ES_API)!=EGL_TRUE){
 printjs("EglBindAPI failed");
 }
 EGLint anEglCtxAttribs2[]={EGL_CONTEXT_CLIENT_VERSION,3,EGL_NONE,EGL_NONE};
-
 contextegl=eglCreateContext (display,eglconfig,EGL_NO_CONTEXT,anEglCtxAttribs2);
-
 if(contextegl==EGL_NO_CONTEXT){
 printjs("eglCreateContext failed.");
 }else{
