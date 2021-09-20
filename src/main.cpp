@@ -37,7 +37,7 @@ printjs("eglCreateContext success!");
 EGLSurface surface=eglCreateWindowSurface(display,eglconfig,NULL,NULL);
 eglMakeCurrent(display,surface,surface,contextegl);
 glClearColor(1.0,0.0,0.0,0.5);
-glClear(GL_COLOR_BUFFER_BIT | GL_ALPHA_BUFFER_BIT);
+glClear(GL_COLOR_BUFFER_BIT);
 }}
 return 1;
 }
