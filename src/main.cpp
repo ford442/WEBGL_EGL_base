@@ -1,4 +1,4 @@
-#include "func.h"
+#include <string>
 #include <emscripten/html5.h>
 #include <GLES3/gl3.h>
 #include <emscripten.h>
@@ -16,7 +16,7 @@ EGL_BIND_TO_TEXTURE_RGBA,EGL_TRUE,
 EGL_TRANSPARENT_TYPE,EGL_TRANSPARENT_RGB,
 EGL_NONE
 };
-int main(int argc,char**argv){
+int main(){
 EmscriptenWebGLContextAttributes attr;
 emscripten_webgl_init_context_attributes(&attr);
 EMSCRIPTEN_WEBGL_CONTEXT_HANDLE ctx=emscripten_webgl_create_context("#canvas",&attr);
@@ -28,14 +28,14 @@ EGLDisplay display=eglGetDisplay(EGL_DEFAULT_DISPLAY);
 eglInitialize(display,&major,&minor);
 if(eglChooseConfig(display,attribute_list,&eglconfig,1,&config_size)==EGL_TRUE && eglconfig!=NULL){
 if(eglBindAPI(EGL_OPENGL_ES_API)!=EGL_TRUE){
-printjs("EglBindAPI failed");
+EM_ASM({console.log("EglBindAPI failed");});
 }
 EGLint anEglCtxAttribs2[]={EGL_CONTEXT_CLIENT_VERSION,3,EGL_NONE,EGL_NONE};
 contextegl=eglCreateContext (display,eglconfig,EGL_NO_CONTEXT,anEglCtxAttribs2);
 if(contextegl==EGL_NO_CONTEXT){
-printjs("eglCreateContext failed.");
+EM_ASM({console.log("eglCreateContext failed.");});
 }else{
-printjs("eglCreateContext success!");
+EM_ASM({console.log("eglCreateContext success!");});
 EGLSurface surface=eglCreateWindowSurface(display,eglconfig,NULL,NULL);
 eglMakeCurrent(display,surface,surface,contextegl);
 glClearColor(1.0,0.0,0.0,0.5);
