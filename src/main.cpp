@@ -8,8 +8,8 @@ EGL_RED_SIZE,8,
 EGL_GREEN_SIZE,8,
 EGL_BLUE_SIZE,8,
 EGL_ALPHA_SIZE,8,
-EGL_DEPTH_SIZE,24,
-EGL_STENCIL_SIZE,8,
+EGL_DEPTH_SIZE,0,
+EGL_STENCIL_SIZE,0,
 EGL_BUFFER_SIZE,32,
 EGL_CONFORMANT,EGL_OPENGL_ES2_BIT,
 EGL_BIND_TO_TEXTURE_RGBA,EGL_TRUE,
@@ -18,6 +18,9 @@ EGL_NONE
 };
 int main(int argc,char**argv){
 EmscriptenWebGLContextAttributes attr;
+attr.alpha=1;
+attr.depth=0;
+attr.antialias=0;
 emscripten_webgl_init_context_attributes(&attr);
 EMSCRIPTEN_WEBGL_CONTEXT_HANDLE ctx=emscripten_webgl_create_context("#canvas",&attr);
 emscripten_webgl_make_context_current(ctx);
