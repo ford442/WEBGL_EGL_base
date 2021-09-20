@@ -4,3 +4,9 @@
 
 // var Module.canvas=document.getElementById('canvas');
 
+
+var Module={
+canvas:(function(){
+let canvas=document.getElementById('canvas');
+return canvas;
+})()};
