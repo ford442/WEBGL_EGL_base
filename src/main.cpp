@@ -16,11 +16,12 @@ EGL_BIND_TO_TEXTURE_RGBA,EGL_TRUE,
 EGL_TRANSPARENT_TYPE,EGL_TRANSPARENT_RGB,
 EGL_NONE
 };
-int main(int argc,char**argv){
+int main(){
 EmscriptenWebGLContextAttributes attr;
 attr.alpha=1;
 attr.depth=0;
 attr.antialias=0;
+attr.premultipliedAlpha=0;
 emscripten_webgl_init_context_attributes(&attr);
 EMSCRIPTEN_WEBGL_CONTEXT_HANDLE ctx=emscripten_webgl_create_context("#canvas",&attr);
 emscripten_webgl_make_context_current(ctx);
