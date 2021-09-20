@@ -18,16 +18,6 @@ EGL_TRANSPARENT_TYPE,EGL_TRANSPARENT_RGB,
 EGL_NONE
 };
 
-extern "C"{
-void jss(){
-EM_ASM({
-var MyModule={
-canvas: (function(){
-var aCanvas=document.getElementById('canvas');
-return aCanvas;
-})()};
-const OccViewerModuleInitialized=createModule(MyModule);
-});}}
 int main(){
 EmscriptenWebGLContextAttributes attr;
 emscripten_webgl_init_context_attributes(&attr);
@@ -55,6 +45,5 @@ eglMakeCurrent(display,surface,surface,contextegl);
 glClearColor(1.0,0.0,0.0,0.5);
 glClear(GL_COLOR_BUFFER_BIT);
 }}
-// jss();
 return 1;
 }
