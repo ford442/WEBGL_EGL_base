@@ -18,11 +18,21 @@ EGL_BIND_TO_TEXTURE_RGBA,EGL_TRUE,
 EGL_TRANSPARENT_TYPE,EGL_TRANSPARENT_RGB, */
 EGL_NONE
 };
-int main(){
+
+extern "C" {
+  
+  void jsss(){
+    
 MAIN_THREAD_EM_ASM({
 let canvas=document.getElementById('canvas');
 specialHTMLTargets["!canvas"] = Module.canvas;
 });
+  }
+
+}
+
+int main(){
+  jsss();
 EmscriptenWebGLContextAttributes attr;
 attr.alpha=1;
 attr.depth=0;
