@@ -4,7 +4,6 @@
 #include <emscripten.h>
 #include <EGL/egl.h>
 
-
 static EGLint attribute_list[]={
 EGL_RED_SIZE,8,
 EGL_GREEN_SIZE,8,
@@ -19,8 +18,7 @@ EGL_TRANSPARENT_TYPE,EGL_TRANSPARENT_RGB,
 EGL_NONE
 };
 
-int main(int argc,char **argv){
-
+int main(){
 EmscriptenWebGLContextAttributes attr;
 emscripten_webgl_init_context_attributes(&attr);
 EMSCRIPTEN_WEBGL_CONTEXT_HANDLE ctx=emscripten_webgl_create_context("#canvas",&attr);
@@ -52,7 +50,7 @@ var MyModule={
 canvas: (function(){
 var aCanvas=document.getElementById('canvas');
 return aCanvas;
-})(),};
+})()};
 const OccViewerModuleInitialized=createModule(MyModule);
 });
 return 1;
