@@ -1,4 +1,3 @@
-#include "func.h"
 #include <emscripten/html5.h>
 #include <GLES3/gl3.h>
 #include <emscripten.h>
