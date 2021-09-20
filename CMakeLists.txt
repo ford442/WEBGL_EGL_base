@@ -12,7 +12,7 @@ set(CMAKE_EXE_LINKER_FLAGS "${CMAKE_EXE_LINKER_FLAGS} --extern-post-js ../index.
 set(CMAKE_INSTALL_PREFIX "" CACHE PATH "")
 
 set(SRCS 
-    src/main.cpp
+    src/main.cpp)
 
 add_executable(WEBGL_EGL_base ${SRCS} ${RESSOURCES})
 
