@@ -20,7 +20,7 @@ EGL_NONE
 };
 int main(){
 MAIN_THREAD_EM_ASM({
-Module.canvas=document.getElementById('canvas');
+let canvas=document.getElementById('canvas');
 });
 EmscriptenWebGLContextAttributes attr;
 attr.alpha=1;
