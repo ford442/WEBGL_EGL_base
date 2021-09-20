@@ -20,11 +20,7 @@ EGL_NONE
 };
 
 int main(int argc,char**argv){
-EM_ASM({
-let canvas=document.getElementById("canvas");
-var Module={};
-Module.canvas=canvas;
-});
+
 EmscriptenWebGLContextAttributes attr;
 emscripten_webgl_init_context_attributes(&attr);
 EMSCRIPTEN_WEBGL_CONTEXT_HANDLE ctx=emscripten_webgl_create_context("#canvas",&attr);
