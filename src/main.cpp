@@ -24,11 +24,8 @@ void jsss(){
 EM_ASM({
 Module.canvas=(function() {
 var aCanvas = document.getElementById('canvas');
-var aGlCtx;
 return aCanvas;
 });
-            
-// var canvas=document.getElementById('canvas');
 });
 }
 }
