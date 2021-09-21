@@ -49,7 +49,7 @@ glClearColor(0.0,1.0,0.0,0.5);
 glClear(GL_COLOR_BUFFER_BIT);
 }}}
 extern "C" {
-void jsdraw(){draw():}
+void jsdraw(){draw();}
 }
 int main(){
 return 1;
