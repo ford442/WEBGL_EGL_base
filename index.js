@@ -8,4 +8,4 @@ var MyModule =
 
 };
 
-const OccViewerModuleInitialized = createModule(MyModule);
+const OccViewerModuleInitialized = Module(MyModule);
