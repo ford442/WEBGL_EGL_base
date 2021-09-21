@@ -17,6 +17,7 @@ EGL_TRANSPARENT_TYPE,EGL_TRANSPARENT_RGB,
 EGL_NONE
 };
 int main(){
+EGLConfig eglconfig=NULL;
 EmscriptenWebGLContextAttributes attr;
 attr.alpha=1;
 attr.depth=0;
@@ -27,7 +28,6 @@ attr.powerPreference=EM_WEBGL_POWER_PREFERENCE_HIGH_PERFORMANCE;
 emscripten_webgl_init_context_attributes(&attr);
 EMSCRIPTEN_WEBGL_CONTEXT_HANDLE ctx=emscripten_webgl_create_context("#canvas",&attr);
 emscripten_webgl_make_context_current(ctx);
-EGLConfig eglconfig=NULL;
 EGLint config_size,major,minor;
 EGLContext contextegl;
 EGLDisplay display=eglGetDisplay(EGL_DEFAULT_DISPLAY);
