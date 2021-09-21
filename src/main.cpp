@@ -52,5 +52,6 @@ extern "C" {
 void jsdraw(){draw();}
 }
 int main(){
+jsdraw();
 return 1;
 }
