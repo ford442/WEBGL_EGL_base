@@ -54,7 +54,7 @@ if(contextegl==EGL_NO_CONTEXT){
 // printjs("eglCreateContext success!");
 EGLSurface surface=eglCreateWindowSurface(display,eglconfig,NULL,NULL);
 eglMakeCurrent(display,surface,surface,contextegl);
-glClearColor(1.0,0.0,0.0,0.5);
+glClearColor(0.0,1.0,0.0,0.5);
 glClear(GL_COLOR_BUFFER_BIT);
 }}
 return 1;
