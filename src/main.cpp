@@ -13,23 +13,15 @@ EGL_ALPHA_SIZE,8,
 EGL_DEPTH_SIZE,0,
 EGL_STENCIL_SIZE,0,
 EGL_BUFFER_SIZE,32,
-/* EGL_CONFORMANT,EGL_OPENGL_ES2_BIT,
+EGL_CONFORMANT,EGL_OPENGL_ES2_BIT,
 EGL_BIND_TO_TEXTURE_RGBA,EGL_TRUE,
-EGL_TRANSPARENT_TYPE,EGL_TRANSPARENT_RGB, */
+EGL_TRANSPARENT_TYPE,EGL_TRANSPARENT_RGB,
 EGL_NONE
 };
 
-extern "C" {
-void jsss(){
-EM_ASM({
-  
-  
-});
-}}
+
 int main(){
-  
-  jsss();
-  
+
 EmscriptenWebGLContextAttributes attr;
 attr.alpha=1;
 attr.depth=0;
