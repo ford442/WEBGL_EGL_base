@@ -4,7 +4,7 @@
 
 // var Module.canvas=document.getElementById('canvas');
 // var canvas=document.getElementById('canvas');
-var Module['canvas']=(function(){
+var Module['canvas']=function(){
 let acanvas=document.getElementById('canvas');
 return acanvas;
 };
