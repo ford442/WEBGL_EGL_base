@@ -17,7 +17,8 @@ EGL_BIND_TO_TEXTURE_RGBA,EGL_TRUE,
 EGL_TRANSPARENT_TYPE,EGL_TRANSPARENT_RGB,
 EGL_NONE
 };
-int main(){
+
+void draw() {
 EmscriptenWebGLContextAttributes attr;
 attr.alpha=1;
 attr.depth=0;
@@ -46,6 +47,10 @@ EGLSurface surface=eglCreateWindowSurface(display,eglconfig,NULL,NULL);
 eglMakeCurrent(display,surface,surface,contextegl);
 glClearColor(0.0,1.0,0.0,0.5);
 glClear(GL_COLOR_BUFFER_BIT);
-}}
+}}}
+extern "C" {
+void jsdraw(){draw():}
+}
+int main(){
 return 1;
 }
