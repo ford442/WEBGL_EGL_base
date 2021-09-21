@@ -1,4 +1,4 @@
 var Module =
 {
-    canvas: document.getElementById('canvas')
+    canvas: function(){return document.getElementById('canvas')}
 };
