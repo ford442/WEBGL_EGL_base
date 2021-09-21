@@ -1,4 +1,3 @@
-// #include "func.h"
 #include <string>
 #include <emscripten/html5.h>
 #include <GLES3/gl3.h>
@@ -18,10 +17,7 @@ EGL_BIND_TO_TEXTURE_RGBA,EGL_TRUE,
 EGL_TRANSPARENT_TYPE,EGL_TRANSPARENT_RGB,
 EGL_NONE
 };
-
-
 int main(){
-
 EmscriptenWebGLContextAttributes attr;
 attr.alpha=1;
 attr.depth=0;
