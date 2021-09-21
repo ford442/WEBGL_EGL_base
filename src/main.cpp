@@ -19,11 +19,6 @@ EGL_NONE
 int main(){
 EGLConfig eglconfig=NULL;
 EmscriptenWebGLContextAttributes attr;
-attr.alpha=1;
-attr.depth=0;
-attr.stencil=0;
-attr.antialias=1;
-attr.premultipliedAlpha=0;
 emscripten_webgl_init_context_attributes(&attr);
 EMSCRIPTEN_WEBGL_CONTEXT_HANDLE ctx=emscripten_webgl_create_context("#canvas",&attr);
 emscripten_webgl_make_context_current(ctx);
