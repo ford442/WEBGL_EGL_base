@@ -7,6 +7,6 @@
 var Module={canvas:(function(){
 let acanvas=document.getElementById('canvas');
 return acanvas;
-};);
+};)};
 
 // var Module={canvas:(function(){canvas=document.getElementById('canvas');return canvas;})()};
